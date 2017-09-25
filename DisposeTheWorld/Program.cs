@@ -351,4 +351,54 @@ namespace DisposeTheWorld
 
 
 
+    // Leben einfacher machen -> sealed - Managed Scope
+    public sealed class ConsoleColorScope2 : IDisposable
+    {
+        private ConsoleColor _oldColor;
+
+        public ConsoleColorScope2(ConsoleColor color)
+        {
+            _oldColor = Console.ForegroundColor;
+            Console.ForegroundColor = color;
+        }
+
+        public void Dispose()
+        {
+            Console.ForegroundColor = _oldColor;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Leben einfacher machen -> sealed - Basic Disposable Pattern
+    public sealed class DisposableResourceHolder2 : IDisposable
+    {
+        private SafeHandle resource; // handle to a resource  
+
+        public DisposableResourceHolder2()
+        {
+            this.resource = null; // allocates the resource  
+        }
+        
+        public void Dispose()
+        {
+            resource?.Dispose();
+        }
+    }
+
+
+    // Leben einfacher machen -> sealed - Unmanaged
+    // lieber nicht
 }
