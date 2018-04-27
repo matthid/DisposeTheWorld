@@ -1,3 +1,3 @@
-## Einführung IDisposable
+## EinfÃ¼hrung IDisposable
 
-- https://docs.microsoft.com/pt-br/dotnet/standard/design-guidelines/dispose-pattern
+- https://docs.microsoft.com/en-US/dotnet/standard/design-guidelines/dispose-pattern
